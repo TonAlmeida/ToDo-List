@@ -1,7 +1,10 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     font-family: inherit;
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -10,10 +13,8 @@ body {
     color: rgba(218, 215, 215, 0.857);
 
     display: grid;
-    grid: 
-        "header header header header" auto
-        "...... list   active ......" auto/
-        1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+    grid:
+        "header header header header"auto "...... list   active ......"auto/ 1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
 }
 
 .title {
@@ -25,9 +26,16 @@ body {
     letter-spacing: 2px;
     margin: -0.3em 0 0.5em;
 }
+
+.title:hover{
+    color: rgb(211, 211, 211);
+    transition: color 2s;
+}
+
 .all-tasks {
     grid-area: list;
 }
+
 .task-list {
     line-height: 1.7;
     font-size: 1.2rem;
@@ -35,32 +43,39 @@ body {
     padding-left: .1em;
     list-style: none;
 }
-.list-name{
+
+.list-name {
     cursor: pointer;
 }
-.list-name:hover{
+
+.list-name:hover {
     opacity: 0.7;
 }
-form{
+
+form {
     display: flex;
 }
-.btn{
+
+.btn {
     cursor: pointer;
     background: 0;
     border: 0;
     padding: 0;
     color: rgba(255, 255, 255, 0.5);
 }
-.btn.create{
+
+.btn.create {
     font-size: 1.5rem;
     font-weight: 900;
     margin-right: 0.25rem;
     transition: opacity 250ms ease-in;
 }
-.btn.create:hover{
+
+.btn.create:hover {
     opacity: 0.7;
 }
-.new{
+
+.new {
     background: transparent;
     border: 0;
     color: inherit;
@@ -71,31 +86,39 @@ form{
     transition: border-bottom 150ms ease-in;
     order: 2;
 }
-.new:focus{
+
+.new:focus {
     border-bottom-width: 3px;
 }
-.new.list{
+
+.new.list {
     font-size: 1.2rem;
 }
-.new.list::placeholder{
+
+.new.list::placeholder {
     color: rgba(194, 191, 191, 0.5);
 }
-#in-block::placeholder{
+
+#in-block::placeholder {
     color: rgb(66, 66, 66);
 }
-#in-block-button{
+
+#in-block-button {
     color: rgb(66, 66, 66);
 }
+
 .active-list {
     font-weight: 700;
     color: white;
 }
+
 .to-do-list {
     grid-area: active;
     background: rgba(204, 202, 202);
     color: rgb(60, 59, 60);
 }
-.to-do-header{
+
+.to-do-header {
     background: #e4e4e4;
     padding: 2rem;
 
@@ -103,32 +126,39 @@ form{
     align-items: center;
     justify-content: space-between;
 }
-.list-title{
+
+.list-title {
     margin: 0 2em 0 0;
 }
-.task-count{
+
+.task-count {
     margin: 0;
     font-size: 1rem;
 }
-.to-do-body{
+
+.to-do-body {
     padding: 2rem;
     position: relative;
 }
-[type="checkbox"]{
-  opacity: 0;
-  position: absolute;
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
 }
-.task label{
+
+.task label {
     display: inline-flex;
     align-items: center;
     position: relative;
 }
-.task{
+
+.task {
     position: relative;
     margin-bottom: 1.25em;
 }
-.task::after{
-    content:"";
+
+.task::after {
+    content: "";
     position: absolute;
     right: 20px;
     left: 20px;
@@ -148,19 +178,22 @@ form{
     cursor: pointer;
     border: 2px solid currentColor;
     border-radius: 50%;
-    
+
     transform: scale(1);
     transition: transform 200ms ease-in;
 }
-.task:hover  .custom-checkbox,
-[type="checkbox"]:focus + label .custom-checkbox{
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus+label .custom-checkbox {
     transform: scale(1.2);
     color: blue;
 }
-.task{
+
+.task {
     position: relative;
 }
-.task label::after{
+
+.task label::after {
     content: "";
     position: absolute;
     left: 1.5em;
@@ -173,17 +206,20 @@ form{
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 300ms ease-in-out;
-} 
-[type="checkbox"]:checked + label::after {
+}
+
+[type="checkbox"]:checked+label::after {
     transform-origin: left;
     transform: scaleX(1);
 }
-[type="checkbox"]:checked + label .custom-checkbox{
+
+[type="checkbox"]:checked+label .custom-checkbox {
     background: blue;
     border-color: blue;
     box-shadow: inset 0 0 0 3px rgba(204, 202, 202);
 }
-.delete-stuff{
+
+.delete-stuff {
     position: absolute;
     display: flex;
     justify-content: space-between;
