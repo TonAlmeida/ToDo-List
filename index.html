@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <script defer src="script.js"></script>
+    <title>To do list</title>
+</head>
+<body>
+    <h1 class="title">Stuff I need to do</h1>
+    <div class="all-tasks">
+        <h2 class="task-list-title">My lists</h2>
+        <ul class="task-list" data-lists>
+            <!-- <li class="list-name active-list">Study</li>
+            <li class="list-name">Work</li>
+            <li class="list-name">Grocery</li> -->
+        </ul>
+        <form action="" data-new-list-form>
+            <input
+            type="text"
+            class="new list"
+            data-new-list-input
+            placeholder="new list name"
+            aria-label="new list name"
+            />
+            <button class="btn create"
+            area-label="create new list">+</button>
+        </form>
+    </div>
+    <div class="to-do-list" data-list-display-container>
+        <div class="to-do-header">
+            <h2 class="list-title" data-list-title>Study</h2>
+            <p class="task-count" data-list-count>3 tasks remaining</p>
+        </div>
+        <div class="to-do-body">
+            <div class="tasks" data-tasks>
+                <div class="task">
+                    <input
+                        type="checkbox"
+                        id="task-1"
+                    />
+                    <label for="task-1">
+                        <span class="custom-checkbox"></span>
+                        study english
+                    </label>
+                </div>
+                <!--/task 1-->
+                <div class="task">
+                    <input
+                        type="checkbox"
+                        id="task-2"
+                    />
+                    <label for="task-2">
+                        <span class="custom-checkbox"></span>
+                        study programming
+                    </label>
+                </div>
+                <!--/task 2-->
+                <div class="task">
+                    <input
+                        type="checkbox"
+                        id="task-3"
+                    />
+                    <label for="task-3">
+                        <span class="custom-checkbox"></span>
+                        College
+                    </label>
+                </div>
+                <!--/task 3-->
+            </div>
+            <div class="new-task-creator">
+                <form action="">
+                    <input
+                    type="text"
+                    id="in-block"
+                    class="new list"
+                    placeholder="new task name"
+                    aria-label="new task name"
+                    />
+                    <button class="btn create"
+                    id="in-block-button"
+                    area-label="create new task">+</button>
+                </form>
+            </div>
+            <div class="delete-stuff">
+                <button id="delete" class="btn">clear completed tasks</button>
+                <button id="delete" class="btn" deta-delete-list-button>delete list</button>
+            </div>
+        </div>
+    </div>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+</body>
+</html>
